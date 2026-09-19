@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ygor Automações | Automação de WhatsApp para comércios em Contagem e Belo Horizonte - MG</title>
+<meta name="description" content="Automatizo o atendimento no WhatsApp de comércios locais e prestadores de serviço em Contagem, Belo Horizonte e região de MG. Bots de atendimento, catálogos digitais, sistemas sob medida e criação de sites para vender mais todos os dias.">
+<meta property="og:title" content="Ygor Automações | Automação de WhatsApp para comércios locais">
+<meta property="og:description" content="Bots de atendimento, catálogos digitais, sistemas sob medida e criação de sites para comércios de Contagem, Belo Horizonte e região.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Ygor Automações",
+  "description": "Automação de atendimento no WhatsApp, bots, catálogos digitais, sistemas sob medida e criação de sites para comércios locais e prestadores de serviço.",
+  "telephone": "+5538997284600",
+  "areaServed": ["Contagem - MG", "Belo Horizonte - MG", "Minas Gerais"],
+  "priceRange": "$$"
+}
+</script>
+<style>
+  :root {
+    --bg: #080d17;
+    --bg-soft: #0b1220;
+    --panel: #0f1830;
+    --panel-strong: #141f3a;
+    --border: #1f2c48;
+    --border-soft: #17223c;
+    --text: #eef2f8;
+    --text-dim: #93a3bf;
+    --text-faint: #5f7092;
+    --accent: #79f0a0;
+    --accent-ink: #06170d;
+    --accent-soft: rgba(121, 240, 160, 0.10);
+    --accent-dim: #3d6b4a;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root:not([data-theme="light"]) { color-scheme: dark; }
+  :root[data-theme="light"] {
+    --bg: #f6f4ee; --bg-soft: #efece3; --panel: #ffffff; --panel-strong: #fbfaf6;
+    --border: #ddd7c8; --border-soft: #e7e2d5; --text: #1a1812; --text-dim: #6b6455; --text-faint: #99917d;
+    --accent: #1f7a45; --accent-ink: #ffffff; --accent-soft: rgba(31,122,69,0.08); --accent-dim: #bfe3cb;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f4ee; --bg-soft: #efece3; --panel: #ffffff; --panel-strong: #fbfaf6;
+      --border: #ddd7c8; --border-soft: #e7e2d5; --text: #1a1812; --text-dim: #6b6455; --text-faint: #99917d;
+      --accent: #1f7a45; --accent-ink: #ffffff; --accent-soft: rgba(31,122,69,0.08); --accent-dim: #bfe3cb;
+    }
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; height: 100%; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100%; background: var(--bg); color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif; line-height: 1.6;
+    overflow-x: hidden; -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 40;
+    padding-top: calc(18px + env(safe-area-inset-top, 0px));
+    padding-bottom: 18px;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .brand .dot { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a.section-link {
+    font-size: 14px; color: var(--text-dim); text-decoration: none;
+  }
+  .nav-links a.section-link:hover { color: var(--text); }
+  .btn {
+    font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 13.5px;
+    text-decoration: none; border-radius: 8px; display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 18px; white-space: nowrap; border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { filter: brightness(1.06); }
+  .btn-ghost { border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--text-faint); }
+  @media (max-width: 720px) { .nav-links a.section-link { display: none; } }
+
+  /* hero */
+  section.hero {
+    padding: 88px 0 72px;
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+  }
+  .hero-reveal { opacity: 0; transform: translateY(14px); animation: rise 0.7s ease forwards 0.05s; }
+  .hero-visual.hero-reveal { animation-delay: 0.2s; }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) { .hero-reveal { opacity: 1; transform: none; animation: none; } }
+
+  .kicker {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent);
+    margin: 0 0 18px; display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent-soft); border: 1px solid var(--accent-dim);
+    padding: 6px 12px; border-radius: 999px;
+  }
+  .kicker .dot-live {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block;
+  }
+  h1 {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: clamp(32px, 4.4vw, 48px); line-height: 1.14; margin: 0 0 22px; letter-spacing: -0.015em;
+  }
+  .lede { color: var(--text-dim); font-size: 17px; max-width: 50ch; margin: 0 0 32px; }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+  .btn-lg { padding: 15px 24px; font-size: 14.5px; }
+  .trust-row { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+  .trust-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-dim); }
+  .stars { color: var(--accent); letter-spacing: 1px; font-size: 13px; }
+
+  .hero-visual { display: flex; justify-content: center; }
+  .hero-visual svg { width: 100%; height: auto; max-width: 400px; }
+
+  /* sections */
+  section { padding: 76px 0; border-top: 1px solid var(--border-soft); }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--text-faint);
+    margin: 0 0 10px;
+  }
+  h2 {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: clamp(22px, 3vw, 28px);
+    margin: 0 0 14px; letter-spacing: -0.01em;
+  }
+  .section-lede { color: var(--text-dim); font-size: 15.5px; max-width: 58ch; margin: 0 0 44px; }
+
+  /* services */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 26px;
+    transition: border-color 0.15s ease;
+  }
+  .card:hover { border-color: var(--text-faint); }
+  .card-icon {
+    width: 34px; height: 34px; margin-bottom: 18px; color: var(--accent);
+  }
+  .card h3 { font-size: 15.5px; font-weight: 600; margin: 0 0 8px; }
+  .card p { color: var(--text-dim); font-size: 13.5px; margin: 0; line-height: 1.55; }
+
+  /* why */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 40px; }
+  .why-item { display: flex; gap: 16px; }
+  .why-num {
+    font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 13px;
+    min-width: 28px; padding-top: 3px;
+  }
+  .why-item h3 { font-size: 15px; font-weight: 600; margin: 0 0 6px; }
+  .why-item p { color: var(--text-dim); font-size: 13.5px; margin: 0; max-width: 42ch; }
+
+  /* process */
+  .steps { position: relative; }
+  .step { display: grid; grid-template-columns: 44px 1fr; gap: 20px; padding-bottom: 40px; position: relative; }
+  .step:last-child { padding-bottom: 0; }
+  .step-node {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--panel); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent); z-index: 1;
+  }
+  .step::before {
+    content: ""; position: absolute; left: 21px; top: 44px; bottom: -0px; width: 1px; background: var(--border);
+  }
+  .step:last-child::before { display: none; }
+  .step-body h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; }
+  .step-body p { color: var(--text-dim); font-size: 14px; margin: 0; max-width: 56ch; }
+
+  /* faq */
+  details.faq {
+    border-bottom: 1px solid var(--border-soft); padding: 20px 0;
+  }
+  details.faq summary {
+    cursor: pointer; font-weight: 600; font-size: 15px; list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  details.faq summary::-webkit-details-marker { display: none; }
+  details.faq summary .chev {
+    font-family: 'JetBrains Mono', monospace; color: var(--text-faint); font-size: 14px; transition: transform 0.15s ease;
+    flex-shrink: 0;
+  }
+  details.faq[open] summary .chev { transform: rotate(45deg); }
+  details.faq p { color: var(--text-dim); font-size: 14px; margin: 14px 0 0; max-width: 62ch; }
+
+  /* final cta */
+  section.cta-band {
+    background: var(--accent); border-top: none; margin-top: 0;
+  }
+  section.cta-band .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  section.cta-band h2 { color: var(--accent-ink); }
+  section.cta-band p { color: color-mix(in srgb, var(--accent-ink) 70%, transparent); font-size: 15px; margin: 0; max-width: 46ch; }
+  section.cta-band .btn-primary { background: var(--accent-ink); color: var(--accent); }
+
+  /* footer */
+  footer.foot { padding: 48px 0 64px; border-top: 1px solid var(--border-soft); }
+  .foot-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
+  .foot-col p, .foot-col a { color: var(--text-dim); font-size: 13.5px; margin: 6px 0; text-decoration: none; display: block; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-col h4 { font-size: 12.5px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; margin: 0 0 12px; font-weight: 500; }
+
+  @media (max-width: 860px) {
+    section.hero { grid-template-columns: 1fr; padding: 56px 0 48px; }
+    .hero-visual { order: -1; }
+    .hero-visual svg { max-width: 280px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+  }
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; }
+    section.cta-band .wrap { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-row">
+    <div class="brand mono">ygor<span class="dot">.</span>automações</div>
+    <div class="nav-links">
+      <a class="section-link" href="#servicos">Serviços</a>
+      <a class="section-link" href="#processo">Como funciona</a>
+      <a class="section-link" href="#faq">Perguntas</a>
+      <a class="btn btn-primary" href="https://wa.me/5538997284600" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="hero-reveal">
+      <p class="kicker"><span class="dot-live"></span>disponível para novos projetos</p>
+      <h1>Seu comércio não pode perder venda por demora no WhatsApp</h1>
+      <p class="lede">Automatizo o atendimento, organizo os processos e ajudo comércios locais e prestadores de serviço em Contagem, Belo Horizonte e região a venderem mais todos os dias — sem precisar contratar mais gente.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="https://wa.me/5538997284600" target="_blank" rel="noopener">Falar agora no WhatsApp →</a>
+        <a class="btn btn-ghost btn-lg" href="#servicos">Ver serviços</a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item"><span class="stars">★★★★★</span> 5,0 no Perfil da Empresa do Google</span>
+        <span class="trust-item">Atendimento em Contagem, BH e região</span>
+      </div>
+    </div>
+    <div class="hero-visual hero-reveal">
+      <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de fluxo de automação de atendimento">
+        <g stroke="#2a3a58" stroke-width="2" fill="none">
+          <path d="M 90 300 L 90 250 L 160 250"/>
+          <path d="M 310 300 L 310 250 L 240 250"/>
+          <path d="M 200 250 L 200 190"/>
+        </g>
+        <circle cx="90" cy="300" r="6" fill="#3d6b4a"/>
+        <circle cx="310" cy="300" r="6" fill="#3d6b4a"/>
+
+        <rect x="120" y="60" width="160" height="130" rx="16" fill="#10192b" stroke="#2a3a58" stroke-width="2"/>
+        <path d="M 175 190 L 175 220 L 210 190 Z" fill="#10192b" stroke="#2a3a58" stroke-width="2"/>
+        <circle cx="168" cy="120" r="9" fill="#79f0a0"/>
+        <circle cx="200" cy="120" r="9" fill="#79f0a0"/>
+        <circle cx="232" cy="120" r="9" fill="#79f0a0"/>
+
+        <rect x="40" y="300" width="100" height="64" rx="10" fill="#0f1830" stroke="#1f2c48" stroke-width="2"/>
+        <text x="90" y="336" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#93a3bf">catálogo</text>
+
+        <rect x="260" y="300" width="100" height="64" rx="10" fill="#0f1830" stroke="#1f2c48" stroke-width="2"/>
+        <text x="310" y="336" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#93a3bf">venda</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <p class="eyebrow">o que eu faço</p>
+    <h2>Cinco formas de vender mais sem trabalhar mais</h2>
+    <p class="section-lede">Cada solução resolve um ponto específico do seu atendimento — do primeiro contato até a venda fechada.</p>
+    <div class="grid">
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v12H7l-3 3V4z"/></svg>
+        <h3>Automação de WhatsApp</h3>
+        <p>Bots que respondem, qualificam e encaminham clientes automaticamente, 24 horas por dia, sem deixar ninguém esperando.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8 15c1 1 2.5 1.5 4 1.5s3-.5 4-1.5"/></svg>
+        <h3>Bots de atendimento rápido</h3>
+        <p>Fluxos de conversa que tiram dúvidas frequentes, agendam horários e coletam informações antes de chegar até você.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+        <h3>Catálogos digitais interativos</h3>
+        <p>Catálogo de produtos ou serviços direto no WhatsApp, fácil de navegar e de atualizar sempre que precisar.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 20 12 17l-5.5 3 1-6.5L3 9l6-1z"/></svg>
+        <h3>Sistemas sob medida</h3>
+        <p>Ferramentas simples e sob medida para organizar pedidos, agendamentos ou controle interno do seu negócio.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        <h3>Criação de sites</h3>
+        <p>Site profissional para o seu negócio aparecer no Google, integrado ao WhatsApp para transformar visita em conversa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="diferenciais">
+    <p class="eyebrow">por que trabalhar comigo</p>
+    <h2>Automação sem virar mais uma dor de cabeça</h2>
+    <p class="section-lede">Nada de sistema genérico. Cada automação é construída pra caber no jeito que o seu negócio já funciona.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-num mono">01</span>
+        <div>
+          <h3>Feito sob medida</h3>
+          <p>Sem pacotes fechados. A automação é desenhada em cima do seu fluxo real de atendimento.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num mono">02</span>
+        <div>
+          <h3>Contato direto comigo</h3>
+          <p>Você fala com quem constrói, não com um time de suporte terceirizado.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num mono">03</span>
+        <div>
+          <h3>Sem contratar mais gente</h3>
+          <p>A automação absorve o volume repetitivo pra sua equipe focar em fechar venda.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <span class="why-num mono">04</span>
+        <div>
+          <h3>Evolui com o negócio</h3>
+          <p>Começa simples e ganha novas etapas conforme sua operação cresce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo">
+    <p class="eyebrow">como funciona</p>
+    <h2>Do primeiro contato até o bot no ar</h2>
+    <p class="section-lede">Um processo direto, sem enrolação, pensado pra rotina de quem não tem tempo sobrando.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-node mono">01</div>
+        <div class="step-body">
+          <h3>Diagnóstico</h3>
+          <p>Entendo como funciona seu atendimento hoje e onde estão os gargalos que fazem você perder tempo ou clientes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-node mono">02</div>
+        <div class="step-body">
+          <h3>Construção</h3>
+          <p>Monto o bot, o catálogo ou o sistema sob medida pro seu jeito de atender, sem complicar sua rotina.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-node mono">03</div>
+        <div class="step-body">
+          <h3>Ajuste e acompanhamento</h3>
+          <p>Testamos junto, ajusto o que for preciso e fico disponível pra evoluir a automação conforme seu negócio cresce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <p class="eyebrow">perguntas frequentes</p>
+    <h2>Antes de você chamar no WhatsApp</h2>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>Preciso trocar meu número de WhatsApp?<span class="chev mono">+</span></summary>
+        <p>Não. A automação é configurada em cima do número que você já usa, seja WhatsApp comum ou Business.</p>
+      </details>
+      <details class="faq">
+        <summary>Quanto tempo leva para ficar pronto?<span class="chev mono">+</span></summary>
+        <p>Depende da complexidade do fluxo, mas a maioria dos bots simples fica no ar em poucos dias após o diagnóstico.</p>
+      </details>
+      <details class="faq">
+        <summary>Funciona para qualquer tipo de comércio?<span class="chev mono">+</span></summary>
+        <p>Funciona bem para quem recebe um volume repetitivo de mensagens: dúvidas de horário, preço, disponibilidade e pedidos.</p>
+      </details>
+      <details class="faq">
+        <summary>Como funciona o suporte depois de pronto?<span class="chev mono">+</span></summary>
+        <p>Fico disponível para ajustes e evoluções — o contato é direto comigo, sem intermediários.</p>
+      </details>
+    </div>
+  </section>
+</div>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div>
+      <h2>Vamos automatizar seu atendimento?</h2>
+      <p>Manda uma mensagem contando como funciona seu atendimento hoje — respondo com um diagnóstico rápido, sem compromisso.</p>
+    </div>
+    <a class="btn btn-primary btn-lg" href="https://wa.me/5538997284600" target="_blank" rel="noopener">Chamar no WhatsApp →</a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div class="foot-col">
+      <div class="brand mono" style="margin-bottom:10px;">ygor<span class="dot">.</span>automações</div>
+      <p>Automação de WhatsApp para comércios locais</p>
+    </div>
+    <div class="foot-col">
+      <h4>contato</h4>
+      <a href="tel:+5538997284600">(38) 99728-4600</a>
+      <a href="https://wa.me/5538997284600" target="_blank" rel="noopener">wa.me/5538997284600</a>
+    </div>
+    <div class="foot-col">
+      <h4>navegação</h4>
+      <a href="#servicos">Serviços</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">Perguntas frequentes</a>
+    </div>
+    <div class="foot-col">
+      <h4>atendimento</h4>
+      <p>Contagem - MG</p>
+      <p>Belo Horizonte - MG</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
